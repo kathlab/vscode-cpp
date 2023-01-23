@@ -40,7 +40,9 @@ FetchContent_MakeAvailable(doctest)
 
 # sfml static build is NOT compatible with MinGW UCRT compiler
 # @see https://github.com/SFML/SFML/issues/2289
-set(SFML_STATIC_LIBRARIES FALSE)
+set(BUILD_SHARED_LIBS ON CACHE BOOL " " FORCE)
+set(SFML_STATIC_LIBRARIES OFF CACHE BOOL " " FORCE)
+set(SFML_BUILD_EXAMPLES OFF CACHE BOOL " " FORCE
 
 FetchContent_Declare(
     SFML
