@@ -23,7 +23,8 @@ set(SFML_TAG "e82d20c29140c8631bfb4d0a28db8918931dd7df") # 2.6.x dev branch
 
 # fltk
 set(FLTK_URL "https://github.com/fltk/fltk")
-set(FLTK_TAG "release-1.3.8")
+# set(FLTK_TAG "release-1.3.8")
+set(FLTK_TAG "3a7c9fe9781067075c38393b6599d8095a777483") # 1.4.x dev branch
 
 ## fetch external libraries
 
@@ -39,10 +40,8 @@ FetchContent_MakeAvailable(doctest)
 # sfml
 
 # sfml static build is NOT compatible with MinGW UCRT compiler
+# MSVCRT compiler is mandatory
 # @see https://github.com/SFML/SFML/issues/2289
-set(BUILD_SHARED_LIBS ON CACHE BOOL " " FORCE)
-set(SFML_STATIC_LIBRARIES OFF CACHE BOOL " " FORCE)
-set(SFML_BUILD_EXAMPLES OFF CACHE BOOL " " FORCE)
 
 FetchContent_Declare(
     SFML
@@ -52,6 +51,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(SFML)
 
 # fltk
+
+# 1.3.x has compilation errors on windows (fixed for not-released 1.4 version)
+# @see https://github.com/fltk/fltk/issues/445
 
 set(FLTK_BUILD_TEST OFF CACHE BOOL " " FORCE)
 if(UNIX AND NOT APPLE) 
