@@ -38,6 +38,10 @@ FetchContent_MakeAvailable(doctest)
 
 # sfml
 
+# sfml static build is NOT compatible with MinGW UCRT compiler
+# @see https://github.com/SFML/SFML/issues/2289
+set(SFML_STATIC_LIBRARIES FALSE)
+
 FetchContent_Declare(
     SFML
     GIT_REPOSITORY ${SFML_URL}
@@ -139,7 +143,7 @@ target_include_directories(${CMAKE_PROJECT_NAME}_sfml
 # link libraries
 target_link_libraries(${CMAKE_PROJECT_NAME}_sfml
     PRIVATE
-    #sfml-audio
+    sfml-audio
     sfml-graphics
     sfml-system
     sfml-window
