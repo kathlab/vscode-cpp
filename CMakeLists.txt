@@ -166,7 +166,7 @@ add_executable(${CMAKE_PROJECT_NAME}_test)
 target_sources(${CMAKE_PROJECT_NAME}_test
     PRIVATE
     src/test/base_config_main_test.cpp
-    src/test/App_test.cpp
+    src/test/app_test.cpp
     src/app.cpp
 )
 

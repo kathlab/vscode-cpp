@@ -39,5 +39,5 @@ Linux (Ubuntu):
 Install packages via Terminal:
 
 ```
-$ sudo apt install g++ cmake
+$ sudo apt install g++ cmake libx11-dev libglu1-mesa-dev libudev-dev libopenal-dev libvorbis-dev libflac-dev libxft-dev libxcursor-dev libxrandr-dev
 ```
