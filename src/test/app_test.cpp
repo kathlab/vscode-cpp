@@ -1,4 +1,4 @@
-#include "doctest.h"
+#include <doctest/doctest.h>
 #include "../app.h"
 
 TEST_SUITE_BEGIN("App");
