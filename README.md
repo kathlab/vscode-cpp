@@ -27,6 +27,12 @@ xcode-select --install
 
 CMake: [Install macOS latest release](https://cmake.org/download/)
 
+Add symlinks to make CMake available in Terminal, VS Code, etc.:
+
+```
+sudo "/Applications/CMake.app/Contents/bin/cmake-gui" --install
+```
+
 Linux (Ubuntu):
 ---
 
