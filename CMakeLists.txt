@@ -39,7 +39,13 @@ FetchContent_MakeAvailable(doctest)
 
 # sfml
 
-# sfml static build is NOT compatible with MinGW UCRT compiler
+# build static library on windows. otherwise apps won't run.
+if(WIN32)
+    set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
+    set(SFML_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
+endif()
+
+# sfml build is NOT compatible with MinGW UCRT compiler
 # MSVCRT compiler is mandatory
 # @see https://github.com/SFML/SFML/issues/2289
 
@@ -52,12 +58,12 @@ FetchContent_MakeAvailable(SFML)
 
 # fltk
 
-# 1.3.x has compilation errors on windows (fixed for not-released 1.4 version)
+# 1.3.x has compilation errors on windows (fixed for upcoming 1.4 version)
 # @see https://github.com/fltk/fltk/issues/445
 
-set(FLTK_BUILD_TEST OFF CACHE BOOL " " FORCE)
+set(FLTK_BUILD_TEST OFF CACHE BOOL "" FORCE)
 if(UNIX AND NOT APPLE) 
-    set(OPTION_USE_PANGO ON CACHE BOOL " " FORCE)
+    set(OPTION_USE_PANGO ON CACHE BOOL "" FORCE)
 endif()
 
 FetchContent_Declare(
