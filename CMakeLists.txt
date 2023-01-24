@@ -39,7 +39,7 @@ FetchContent_MakeAvailable(doctest)
 
 # sfml
 
-# build static library on windows. otherwise apps won't run.
+# build SFML static library on windows to fix run issue in VS Code.
 if(WIN32)
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
     set(SFML_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
