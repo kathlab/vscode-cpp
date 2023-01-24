@@ -18,12 +18,12 @@ set(DOCTEST_TAG "v2.4.9")
 
 # sfml
 set(SFML_URL "https://github.com/SFML/SFML.git")
-# set(SFML_TAG "2.5.1")  # does not support c++17 or macOS M1/M2
+# set(SFML_TAG "2.5.1")  # does not support c++17 nor macOS M1/M2
 set(SFML_TAG "e82d20c29140c8631bfb4d0a28db8918931dd7df") # 2.6.x dev branch
 
 # fltk
 set(FLTK_URL "https://github.com/fltk/fltk")
-# set(FLTK_TAG "release-1.3.8") # DWORD error in this release on windows
+# set(FLTK_TAG "release-1.3.8") # DWORD type error in this release on windows
 set(FLTK_TAG "b5b88d5f0dcb682df1ad80ac8939fcfc1f6671da") # 1.4.x dev branch
 
 ## fetch external libraries
