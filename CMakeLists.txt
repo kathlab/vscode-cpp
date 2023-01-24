@@ -39,7 +39,7 @@ FetchContent_MakeAvailable(doctest)
 
 # sfml
 
-# build SFML static library on windows to fix run issue in VS Code.
+# build SFML static library on windows to fix run issue in VS Code
 if(WIN32)
     set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
     set(SFML_USE_STATIC_LIBS ON CACHE BOOL "" FORCE)
@@ -73,8 +73,6 @@ FetchContent_Declare(
 )
 
 FetchContent_MakeAvailable(FLTK)
-
-message(${fltk_SOURCE_DIR})
 
 if(WIN32)
     set(GUI_TYPE WIN32)
